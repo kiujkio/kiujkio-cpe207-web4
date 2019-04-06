@@ -44,7 +44,7 @@ if(req.url === '/'){
       contentType = 'image/jpg';
       break;
     case '.svg':
-      contentType = 'image/svg+xml'
+      contentType = 'image/vg+xml'
   }
 
   // Check if contentType is text/html but no .html file extension
