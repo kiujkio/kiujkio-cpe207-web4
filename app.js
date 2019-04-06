@@ -11,12 +11,15 @@ if(req.url === '/'){
   x = 'gallary.html'
 }else if(req.url === '/contact'){
   x = 'contact.html'
+}else{
+  x = req.url;
+
 }
   // Build file path
   let filePath = path.join(
     __dirname,
     'public',
-   x
+       x
   );
 
   // get file extension
@@ -40,6 +43,8 @@ if(req.url === '/'){
     case '.jpg':
       contentType = 'image/jpg';
       break;
+    case '.svg':
+      contentType = 'image/svg+xml'
   }
 
   // Check if contentType is text/html but no .html file extension
