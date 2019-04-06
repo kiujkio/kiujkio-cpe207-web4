@@ -4,12 +4,19 @@ const path = require('path');
 
 const server = http.createServer((req, res) => {
   // -------- more flexible way ---------
-
+let x
+if(req.url === '/'){
+  x = 'index.html'
+}else if(req.url === '/gallary'){
+  x = 'gallary.html'
+}else if(req.url === '/contact'){
+  x = 'contact.html'
+}
   // Build file path
   let filePath = path.join(
     __dirname,
     'public',
-    req.url === '/' ? 'index.html' : req.url
+   x
   );
 
   // get file extension
